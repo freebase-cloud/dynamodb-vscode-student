@@ -1,0 +1,7 @@
+{
+  "name": "dynamodb-vscode-student",
+  "engine": "dynamodb",
+  "slug": "dynamodb",
+  "kind": "student",
+  "useCase": "student"
+}

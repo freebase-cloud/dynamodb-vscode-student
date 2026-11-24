@@ -1,0 +1,34 @@
+[
+  {
+    "phase": "seed",
+    "query": "{\"Action\":\"PutItem\",\"TableName\":\"fbx_dynamodb_000000000000000000000000\",\"Item\":{\"id\":1,\"student\":\"Alex Example\",\"grade\":82}}"
+  },
+  {
+    "phase": "seed",
+    "query": "{\"Action\":\"PutItem\",\"TableName\":\"fbx_dynamodb_000000000000000000000000\",\"Item\":{\"id\":2,\"student\":\"Blair Sample\",\"grade\":58}}"
+  },
+  {
+    "phase": "seed",
+    "query": "{\"Action\":\"PutItem\",\"TableName\":\"fbx_dynamodb_000000000000000000000000\",\"Item\":{\"id\":3,\"student\":\"Casey Demo\",\"grade\":95}}"
+  },
+  {
+    "phase": "read",
+    "query": "{\"Action\":\"Scan\",\"TableName\":\"fbx_dynamodb_000000000000000000000000\",\"Limit\":100}"
+  },
+  {
+    "phase": "update",
+    "query": "{\"Action\":\"UpdateItem\",\"TableName\":\"fbx_dynamodb_000000000000000000000000\",\"Key\":{\"id\":1},\"UpdateExpression\":\"SET grade = :v\",\"ExpressionAttributeValues\":{\":v\":92}}"
+  },
+  {
+    "phase": "verify",
+    "query": "{\"Action\":\"GetItem\",\"TableName\":\"fbx_dynamodb_000000000000000000000000\",\"Key\":{\"id\":1}}"
+  },
+  {
+    "phase": "delete",
+    "query": "{\"Action\":\"DeleteItem\",\"TableName\":\"fbx_dynamodb_000000000000000000000000\",\"Key\":{\"id\":2}}"
+  },
+  {
+    "phase": "cleanup",
+    "query": "{\"Action\":\"DeleteTable\",\"TableName\":\"fbx_dynamodb_000000000000000000000000\"}"
+  }
+]
